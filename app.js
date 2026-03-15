@@ -17,13 +17,13 @@ if (!fs.existsSync("uploads")) {
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// const limiter = rateLimit({
-//     windowMs: 15 * 60 *1000,
-//     max : 5,
-//     message : 'The system allows only 5 requests per 15 min at the moment, please try again later after 15 min.'
-// })
+const limiter = rateLimit({
+    windowMs: 15 * 60 *1000,
+    max : 5,
+    message : 'The system allows only 5 requests per 15 min at the moment, please try again later after 15 min.'
+})
 
-// app.use(limiter);
+app.use(limiter);
 
 app.use('/api/analyze', analyzeRouter);
 
