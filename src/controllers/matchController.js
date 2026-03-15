@@ -1,6 +1,6 @@
 import { extractResumeText } from "../services/resumeParser.js";
 import { aIService } from "../services/aiService.js";
-import { generateKeyWords } from "../services/atsAIService.js";
+import { generateKeyWords } from "../services/atsAiService.js";
 import fs from 'fs';
 
 const matchResume = async (req, res) => {
