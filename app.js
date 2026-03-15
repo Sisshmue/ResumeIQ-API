@@ -6,8 +6,13 @@ import analyzeRouter from './src/routes/analysisRoutes.js'
 import swaggerSpec from './src/config/swagger.js';
 import swaggerUi from 'swagger-ui-express'
 import rateLimit from 'express-rate-limit';
+import fs from 'fs'
 
 const app = express();
+
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
+}
 
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
