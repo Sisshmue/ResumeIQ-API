@@ -1,13 +1,7 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Groq } from "groq-sdk/client.js";
 
 export const aIService = async (resumeText, matchApi = false, jobDes = "") => {
   try {
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-flash-latest",
-    });
-
     const groqAI = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
     const prompt = matchApi
@@ -59,10 +53,6 @@ export const aIService = async (resumeText, matchApi = false, jobDes = "") => {
                     Resume:
                     ${resumeText}
                     `;
-    const result = await model.generateContent(prompt);
-    const rawText = result.response.text();
-    const cleaned = rawText.replace(/```json|```/g, "").trim();
-    const parsed = JSON.parse(cleaned);
 
     const groqResult = await groqAI.chat.completions.create({
       model: "llama-3.3-70b-versatile",
