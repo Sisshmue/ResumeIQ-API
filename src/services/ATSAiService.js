@@ -11,8 +11,8 @@ export const generateKeyWords = async(resumeText, isMatching = false, jobDes = '
                     Generate only in Json fromat.
 
                     structure:
-                    "including_words" : [],
-                    "suggested_words" : [],
+                    "found_keywords" : [],
+                    "missing_keywords" : [],
 
                     resume:
                     ${resumeText}
@@ -25,8 +25,8 @@ export const generateKeyWords = async(resumeText, isMatching = false, jobDes = '
                     Generate only in Json fromat.
 
                     structure:
-                    "including_words" : [],
-                    "suggested_words" : [],
+                    "found_keywords" : [],
+                    "missing_keywords" : [],
 
                     resume:
                     ${resumeText}
