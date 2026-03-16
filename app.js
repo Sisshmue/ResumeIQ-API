@@ -15,11 +15,10 @@ if (!fs.existsSync("uploads")) {
 }
 
 app.use(express.json());
-app.use(limiter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/api/analyze', analyzeRouter);
+app.use('/api/analyze',limiter, analyzeRouter);
 
 
 const PORT = 3000;
