@@ -14,7 +14,7 @@ export const aIService = async (resumeText, matchApi = false, jobDes = "") => {
 
                     Structure:
                     {
-                    "ATS_score": percentage number between 0 and 100,
+                    "ATS_score": percentage number of how good the resume is to pass the ATS tests between 0 and 100,
                     "overview": string,
                     "strengths": [],
                     "weaknesses": [],
@@ -38,9 +38,9 @@ export const aIService = async (resumeText, matchApi = false, jobDes = "") => {
 
                     Structure:
                     {
-                    "ATS_score": percentage number between 0 and 100,
-                    "skill_score": percentage number between 0 and 100,
-                    "experience_score": percentage number between 0 and 100,
+                    "ATS_score": percentage number of how good the resume is to pass the ATS tests between 0 and 100,
+                    "skill_score": percentage number of how confident the candidate is skillful between 0 and 100,
+                    "experience_score": percentage number which represnts the candidate experience level compared to advance senior level between 0 and 100,
                     "experience_level": String such as Junior, Mid-senior, Senioe etc.
                     "overview": string,
                     "strengths": [],
