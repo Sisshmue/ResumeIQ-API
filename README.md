@@ -1,270 +1,84 @@
-ResumeIQ API
+# 📑 ResumeIQ API
+> **AI-Powered Resume Analysis & ATS Optimization Engine**
 
-AI-powered Resume Analysis API that evaluates resumes using ATS-style scoring, keyword extraction, and intelligent career recommendations.
+ResumeIQ is a robust REST API designed to bridge the gap between job seekers and modern hiring systems. By leveraging the **Gemini AI API**, it transforms raw resume data into structured, actionable insights—helping developers understand how they rank in the eyes of an **Applicant Tracking System (ATS)**.
 
-ResumeIQ helps developers and job seekers understand how well their resumes match modern hiring systems by providing structured insights such as skill evaluation, experience level detection, missing keywords, and improvement suggestions.
+---
 
-The system transforms raw resume files into actionable data that can be used by mobile apps, dashboards, or career tools.
+## 🚀 Live Resources
+* **[Live Demo](https://resumeiq-api.onrender.com/api-docs/#/Resume%20Analysis)**
+* **[Swagger API Documentation](https://resumeiq-api.onrender.com/api-docs/#/Resume%20Analysis)**
 
-Live Demo
+---
 
-Swagger API Documentation
-https://resumeiq-api.onrender.com/api-docs/#/Resume%20Analysis
+## ✨ Key Features
 
-Key Features
-AI Resume Analysis
+### 🧠 AI Resume Analysis
+The core engine scans resumes to generate a comprehensive profile including:
+* **Scoring:** ATS Score, Skill Score, and Experience Score.
+* **Detection:** Automatic Experience Level identification (e.g., Junior, Mid, Senior).
+* **Feedback:** Curated lists of **Strengths**, **Weaknesses**, and **Improvement Suggestions**.
 
-ResumeIQ analyzes resumes and generates structured insights including:
+### 🔍 Keyword Extraction
+The API compares your resume against industry standards to find:
+* **Found Keywords:** Skills already present (e.g., *Flutter, Dart, Firebase*).
+* **Missing Keywords:** Critical gaps to fill (e.g., *Unit Testing, SOLID Principles*).
 
-ATS Score
+### 📈 History Tracking
+Authenticated users can maintain a personal repository of their career growth:
+* **Metadata Storage:** Resume file details and upload timestamps.
+* **Progress Mapping:** Compare scores across different versions of your resume.
 
-Skill Score
+---
 
-Experience Score
+## 🛠️ Tech Stack
 
-Experience Level Detection
+| Category | Technology |
+| :--- | :--- |
+| **Backend** | Node.js, Express.js |
+| **Database** | PostgreSQL, Prisma ORM |
+| **AI Engine** | Google Gemini API |
+| **Auth** | JWT (JSON Web Tokens) |
+| **Documentation** | Swagger (OpenAPI) |
+| **Deployment** | Render |
 
-Resume Strengths
+---
 
-Resume Weaknesses
+## 🏗️ System Architecture
 
-Suggested Job Roles
+```text
+Client ──▶ REST API (Express) ──▶ Analysis Engine ──▶ Gemini AI ──▶ PostgreSQL
+---
 
-Resume Improvement Suggestions
-
-Recommended Skills to Learn
-
-Keyword Extraction
-
-The API extracts important resume keywords and identifies missing industry-relevant keywords.
-
-Example output:
-
-Found Keywords:
-Flutter
-Dart
-Firebase
-REST API
-Clean Architecture
-BLoC
-
-Missing Keywords:
-Unit Testing
-Widget Testing
-SOLID Principles
-Agile Methodology
-Material Design
-
-This helps users optimize their resumes for ATS systems used by recruiters.
-
-Resume Scoring System
-
-ResumeIQ evaluates resumes using multiple scoring dimensions:
-
-ATS Score
-Skill Score
-Experience Score
-
-These scores provide a quick assessment of how competitive a resume is for a specific role.
-
-Job Role Recommendation
-
-Based on the extracted skills and experience, the system suggests potential career roles such as:
-
-Junior Flutter Developer
-
-Mobile Application Developer
-
-Software Engineer (Mobile)
-
-Resume History Tracking
-
-Authenticated users can store and retrieve previously analyzed resumes.
-
-Stored information includes:
-
-Resume file metadata
-
-Analysis results
-
-Recommendations
-
-Upload timestamps
-
-Example API Response
-{
-  "ATS_score": 80,
-  "skill_score": 90,
-  "experience_score": 60,
-  "experience_level": "Junior",
-  "overview": "With this resume, you can apply to 70% of junior Flutter roles.",
-  "strengths": [
-    "Hands-on experience in Flutter and Dart",
-    "Experience with Clean Architecture and BLoC state management"
-  ],
-  "weaknesses": [
-    "Lack of experience in large-scale team projects"
-  ],
-  "suggested_job_roles": [
-    "Junior Flutter Developer",
-    "Mobile Application Developer"
-  ]
-}
-
-The system returns structured JSON output, making it easy for frontend applications or analytics systems to consume.
-
-Tech Stack
-
-Backend
-
-Node.js
-
-Express.js
-
-Database
-
-PostgreSQL
-
-Prisma ORM
-
-AI Integration
-
-Gemini API
-
-Authentication
-
-JWT Authentication
-
-Documentation
-
-Swagger (OpenAPI)
-
-Deployment
-
-Render
-
-System Architecture
-Client
-   │
-   ▼
-REST API (Express.js)
-   │
-   ▼
-Resume Analysis Engine
-   │
-   ▼
-AI Model Processing
-   │
-   ▼
-Structured Resume Insights
-   │
-   ▼
-PostgreSQL Database (Prisma ORM)
-Project Structure
+# 📂 Project Structure
 ResumeIQ-API
-│
-├── controllers
-│   ├── authController.js
-│   ├── analysisController.js
-│   └── historyController.js
-│
-├── routes
-│   ├── authRoutes.js
-│   ├── analysisRoutes.js
-│   └── historyRoutes.js
-│
-├── middleware
-│   └── authenticate.js
-│
-├── prisma
-│   └── schema.prisma
-│
-├── utils
-│   └── aiService.js
-│
-└── server.js
-API Endpoints
+├── controllers/      # Auth, Analysis, and History logic
+├── routes/           # API Endpoint definitions
+├── middleware/       # JWT Authentication & Security
+├── prisma/           # Database schema & ORM config
+├── utils/            # AI Service & Gemini Integration
+└── server.js         # Entry Point
 
+#🔌 API Endpoints
 Authentication
+POST /auth/register — Create a new developer account.
 
-POST /auth/register
-POST /auth/login
+POST /auth/login — Authenticate and receive a Bearer token.
 
 Resume Analysis
+POST /analysis/upload — Submit a resume for full AI evaluation.
 
-POST /analysis/upload
+History
+GET /history — Fetch all previous analysis records.
 
-Resume History
+---
 
-GET /history
-
-Full API documentation is available via Swagger.
-
-Use Cases
-
-ResumeIQ can be used for:
-
-Resume review tools
-
-Career coaching platforms
-
-Job preparation applications
-
-AI-powered hiring assistants
-
-Resume improvement dashboards
-
-Developer portfolio projects
-
-Why This Project Matters
-
-Modern companies use ATS (Applicant Tracking Systems) to filter resumes before recruiters see them.
-
-ResumeIQ demonstrates how AI can be used to:
-
-analyze resumes automatically
-
-extract meaningful insights
-
-provide actionable career feedback
-
-help job seekers optimize their resumes
-
-This project also showcases how to integrate AI services with backend APIs to create real-world developer tools.
-
-Author
-
+# 👨‍💻 Author
 Siss Hmue Aung
+Flutter & Backend Developer
 
-Flutter Developer | Backend Developer
+"Building tools that empower developers to land their dream roles."
 
-Skills:
+GitHub: @Sisshmue
 
-Flutter
-
-Node.js
-
-Express
-
-PostgreSQL
-
-Prisma
-
-AI API Integration
-
-GitHub
-https://github.com/Sisshmue
-
-Future Improvements
-
-Planned improvements include:
-
-Resume PDF parsing improvements
-
-Job description comparison analysis
-
-Resume improvement scoring over time
-
-Frontend dashboard (Flutter)
-
-Resume analytics visualization
+Expertise: Flutter, Node.js, PostgreSQL, AI Integration.
