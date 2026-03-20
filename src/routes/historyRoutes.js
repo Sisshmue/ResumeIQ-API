@@ -10,7 +10,7 @@ const router = express.Router();
  *   get:
  *     summary: Get resume analysis history
  *     description: Returns all resumes analyzed by the authenticated user.
- *     tags: [Resume]
+ *     tags: [Resume History]
  *     security:
  *       - bearerAuth: []
  *     responses:

@@ -8,6 +8,24 @@ const options = {
       version: "1.0.0",
       description: "AI-powered resume analysis and job matching API",
     },
+    tags: [
+      {
+        name: "Authentication",
+        description: "User authentication endpoints",
+      },
+      {
+        name: "Resume Analysis",
+        description: "Analyze resumes using AI",
+      },
+      {
+        name: "Job Matching",
+        description: "Match resumes with job descriptions",
+      },
+      {
+        name: "Resume History",
+        description: "User resume history",
+      },
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {
