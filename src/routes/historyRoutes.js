@@ -6,7 +6,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /history:
+ * /api/history:
  *   get:
  *     summary: Get resume analysis history
  *     description: Returns all resumes analyzed by the authenticated user.

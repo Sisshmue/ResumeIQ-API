@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /auth/register:
+ * /api/auth/register:
  *   post:
  *     summary: Register a new user
  *     description: Creates a new user account.
@@ -41,7 +41,7 @@ router.post('/register', registerUser);
 
 /**
  * @swagger
- * /auth/login:
+ * /api/auth/login:
  *   post:
  *     summary: Login user
  *     description: Authenticates user and returns JWT token.
