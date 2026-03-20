@@ -21,7 +21,14 @@ export const register = async (username, email, password) => {
     },
   });
 
-  return user;
+  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+    expiresIn: "1d;",
+  });
+
+  return {
+    user,
+    token,
+  };
 };
 
 export const login = async (email, password) => {
@@ -48,7 +55,7 @@ export const login = async (email, password) => {
   );
 
   return {
-    user : existingUser,
-    token
-  }
+    user: existingUser,
+    token,
+  };
 };
