@@ -1,12 +1,13 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
-import analyzeRouter from './src/routes/analysisRoutes.js'
-import swaggerSpec from './src/config/swagger.js';
-import swaggerUi from 'swagger-ui-express'
-import fs from 'fs'
-import { limiter } from './src/middlewares/limitMiddleware.js';
+import analyzeRouter from "./src/routes/analysisRoutes.js";
+import swaggerSpec from "./src/config/swagger.js";
+import swaggerUi from "swagger-ui-express";
+import fs from "fs";
+import { limiter } from "./src/middlewares/limitMiddleware.js";
+import authRouter from "./src/routes/authRoutes.js";
 
 const app = express();
 
@@ -16,12 +17,14 @@ if (!fs.existsSync("uploads")) {
 
 app.use(express.json());
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/api/analyze',limiter, analyzeRouter);
+app.use("/api/analyze", limiter, analyzeRouter);
 
+app.use("/api/auth", authRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
+  console.log("DATABASE_URL:", process.env.DATABASE_URL);
 });
