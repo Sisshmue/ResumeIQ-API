@@ -2,6 +2,7 @@ import express from "express";
 import upload from "../middlewares/uploadMiddleware.js";
 import AnalyzeResume from "../controllers/resumeController.js";
 import matchResume from "../controllers/matchController.js";
+import { authenticate } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 /**
@@ -53,7 +54,7 @@ const router = express.Router();
  *                   - Node.js
  *                   - Express.js
  */
-router.post("/resume", upload.single("resume"), AnalyzeResume);
+router.post("/resume", authenticate, upload.single("resume"), AnalyzeResume);
 
 /**
  * @swagger
@@ -106,6 +107,6 @@ router.post("/resume", upload.single("resume"), AnalyzeResume);
  *                   - Express.js
  */
 
-router.post("/match", upload.single("resume"), matchResume);
+router.post("/match", authenticate, upload.single("resume"), matchResume);
 
 export default router;
