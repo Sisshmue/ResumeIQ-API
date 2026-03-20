@@ -6,8 +6,8 @@ ResumeIQ is a robust REST API designed to bridge the gap between job seekers and
 ---
 
 ## 🚀 Live Resources
-* **[Live Demo](https://resumeiq-api.onrender.com/api-docs/#/Resume%20Analysis)**
-* **[Swagger API Documentation](https://resumeiq-api.onrender.com/api-docs/#/Resume%20Analysis)**
+* **[Live Demo](https://resumeiq-api.onrender.com/api-docs/#)**
+* **[Swagger API Documentation](https://resumeiq-api.onrender.com/api-docs/#)**
 
 ---
 
@@ -48,6 +48,7 @@ Authenticated users can maintain a personal repository of their career growth:
 
 ```text
 Client ──▶ REST API (Express) ──▶ Analysis Engine ──▶ Gemini AI ──▶ PostgreSQL
+```
 ---
 
 # 📂 Project Structure
@@ -75,7 +76,7 @@ GET /history — Fetch all previous analysis records.
 
 # 👨‍💻 Author
 Siss Hmue Aung
-Flutter & Backend Developer
+Flutter & Fullstack Developer
 
 "Building tools that empower developers to land their dream roles."
 
