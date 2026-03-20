@@ -37,10 +37,10 @@ Authenticated users can maintain a personal repository of their career growth:
 | :--- | :--- |
 | **Backend** | Node.js, Express.js |
 | **Database** | PostgreSQL, Prisma ORM |
-| **AI Engine** | Google Gemini API |
+| **AI Engine** | Google Gemini API, Groq AI |
 | **Auth** | JWT (JSON Web Tokens) |
 | **Documentation** | Swagger (OpenAPI) |
-| **Deployment** | Render |
+| **Deployment** | Render, Neon |
 
 ---
 
