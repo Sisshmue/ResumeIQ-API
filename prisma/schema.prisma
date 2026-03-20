@@ -17,14 +17,14 @@ model User{
   name String
   email String @unique
   password String 
-  createAt DateTime @default(now())
+  createdAt DateTime @default(now())
   resumes Resume[]
 }
 
 model Resume{
   id Int @id @default(autoincrement())
   fileName String
-  fileType Bytes
+  fileType String
   createdAt DateTime @default(now())
   userId Int
   recommendation Recommendation[]
@@ -36,7 +36,7 @@ model Resume{
 model Recommendation{
   id Int @id @default(autoincrement())
   atsScore Int
-  resommendation String
+  recommendation String
   resumeId Int
 
   resume Resume @relation(fields: [resumeId], references: [id])
