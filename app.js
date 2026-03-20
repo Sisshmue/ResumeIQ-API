@@ -8,6 +8,7 @@ import swaggerUi from "swagger-ui-express";
 import fs from "fs";
 import { limiter } from "./src/middlewares/limitMiddleware.js";
 import authRouter from "./src/routes/authRoutes.js";
+import historyRouter from "./src/routes/historyRoutes.js"
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/analyze", limiter, analyzeRouter);
 
 app.use("/api/auth", authRouter);
+
+app.use('/api/history', historyRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {
