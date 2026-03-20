@@ -52,6 +52,7 @@ Client ──▶ REST API (Express) ──▶ Analysis Engine ──▶ Gemini A
 ---
 
 # 📂 Project Structure
+```
 ResumeIQ-API
 ├── controllers/      # Auth, Analysis, and History logic
 ├── routes/           # API Endpoint definitions
@@ -59,8 +60,9 @@ ResumeIQ-API
 ├── prisma/           # Database schema & ORM config
 ├── utils/            # AI Service & Gemini Integration
 └── server.js         # Entry Point
-
-#🔌 API Endpoints
+```
+---
+# 🔌 API Endpoints
 Authentication
 POST /auth/register — Create a new developer account.
 
